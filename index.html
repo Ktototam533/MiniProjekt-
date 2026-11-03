@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> myLGS Ideenmagnet</title>
+    <title>myLGS Ideenmagnet</title>
     <link rel="stylesheet" href="style.css">
-
-
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <main class="login-container">
+        <section class="card">
+            <div class="logo">✦</div>
+            <h1>myLGS Ideenmagnet</h1>
+            <p class="subtitle">Deine Schule. Deine Ideen. Deine Stimme.</p>
 
-<h1>MyLGS Ideenmagnet</h1>
-<p>Anmelden</p>
+            <div class="tabs">
+                <button type="button" class="tab active" data-tab="login">Anmelden</button>
+                <button type="button" class="tab" data-tab="register">Registrieren</button>
+            </div>
 
+            <form id="login-form" class="auth-form">
+                <label for="login-email">E-Mail-Adresse</label>
+                <input id="login-email" name="email" type="email"
+                       placeholder="name@lgs-di.de" required>
 
-<form action="php/login.php" method="POST">
+                <label for="login-password">Passwort</label>
+                <input id="login-password" name="password" type="password"
+                       autocomplete="current-password" required>
 
-    <input 
-        type="email" 
-        name="email" 
-        placeholder="E-Mail"
-        required
-    >
+                <button type="submit">Anmelden</button>
+            </form>
 
-    <input 
-        type="password" 
-        name="password" 
-        placeholder="Passwort"
-        required
-    >
+            <form id="register-form" class="auth-form hidden">
+                <label for="register-email">E-Mail-Adresse</label>
+                <input id="register-email" name="email" type="email"
+                       placeholder="name@lgs-di.de" required>
 
-    <button type="submit">
-        Anmelden
-    </button>
+                <label for="nickname">Nickname</label>
+                <input id="nickname" name="nickname" maxlength="30"
+                       placeholder="Dein Nickname" required>
 
-</form>
+                <label for="register-password">Passwort (mindestens 8 Zeichen)</label>
+                <input id="register-password" name="password" type="password"
+                       minlength="8" autocomplete="new-password" required>
 
-<script src="script.js"></script>
+                <button type="submit">Konto erstellen</button>
+            </form>
 
-
+            <p id="message" class="message" aria-live="polite"></p>
+            <p class="footer-text">Gemeinsam unsere Schule verbessern.</p>
+        </section>
+    </main>
 </body>
 </html>

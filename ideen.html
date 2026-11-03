@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideen – myLGS Ideenmagnet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="ideen.html" class="brand">✦ myLGS Ideenmagnet</a>
+        <button id="logout-button" class="secondary-button">Abmelden</button>
+    </header>
+
+    <main class="content">
+        <section class="welcome">
+            <h1>Ideen für unsere Schule</h1>
+            <p>Teile deine Vorschläge und stimme über Ideen anderer ab.</p>
+        </section>
+
+        <section class="card">
+            <h2>Idee einreichen</h2>
+            <form id="idea-form">
+                <label for="title">Titel</label>
+                <input id="title" name="title" maxlength="100" required>
+
+                <label for="description">Beschreibung</label>
+                <textarea id="description" name="description"
+                          maxlength="2000" rows="5" required></textarea>
+
+                <label for="category">Kategorie</label>
+                <select id="category" name="category" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Unterricht">Unterricht</option>
+                    <option value="Schulgebäude">Schulgebäude</option>
+                    <option value="Pausen">Pausen</option>
+                    <option value="Verpflegung">Verpflegung</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
+
+                <button type="submit">Idee einreichen</button>
+            </form>
+            <p id="idea-message" class="message" aria-live="polite"></p>
+        </section>
+
+        <section class="ideas-section">
+            <div class="list-heading">
+                <h2>Freigegebene Ideen</h2>
+                <div class="filters">
+                    <label for="filter-category">Kategorie</label>
+                    <select id="filter-category">
+                        <option value="">Alle</option>
+                        <option>Unterricht</option>
+                        <option>Schulgebäude</option>
+                        <option>Pausen</option>
+                        <option>Verpflegung</option>
+                        <option>Sonstiges</option>
+                    </select>
+
+                    <label for="sort-ideas">Sortieren</label>
+                    <select id="sort-ideas">
+                        <option value="votes">Meiste Stimmen</option>
+                        <option value="newest">Neueste zuerst</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="ideas-list" class="ideas-list"></div>
+            <p id="ideas-message" class="message"></p>
+        </section>
+
+        <section id="admin-section" class="card hidden">
+            <h2>Administration: offene Ideen</h2>
+            <div id="pending-list"></div>
+        </section>
+    </main>
+</body>
+</html>
