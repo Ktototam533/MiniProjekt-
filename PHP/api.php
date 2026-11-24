@@ -1,4 +1,12 @@
 <?php
+
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+error_reporting(E_ALL);
+
+ini_set('error_log', __DIR__ . '/php-errors.log');
+
+
 session_start();
 
 header("Content-Type: application/json; charset=utf-8");
