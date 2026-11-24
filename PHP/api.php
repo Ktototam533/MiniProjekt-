@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 header("Content-Type: application/json; charset=utf-8");
 
 const ADMIN_EMAIL = "admin@lgs-di.de"; // Hier die echte Admin-Adresse eintragen
